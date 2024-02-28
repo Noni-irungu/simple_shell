@@ -4,12 +4,12 @@
  * main - a function that waits for the program
  * @argc: the argument count.
  * @argv: An array of arguments.
- * @environ: The environment variables.
+ * @myenv: The environment variables.
  *
  * Return: 0 Alawys success
 */
 
-int main(int argc, char *argv[], char **environ)
+int main(int argc, char *argv[], char **myenv)
 {
 	char *insert_buff;
 	(void)argc;
@@ -18,7 +18,7 @@ int main(int argc, char *argv[], char **environ)
 	{
 		showing_prompt();
 		insert_buff = obtain_user_input();
-		executing_the_directive(insert_buff, argv, environ);
+		executing_the_directive(insert_buff, argv, myenv);
 		free(insert_buff);
 	}
 
