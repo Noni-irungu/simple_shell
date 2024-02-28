@@ -3,27 +3,27 @@
 /**
  * handling_builtin_directives - a function that handles
  * all of the builtin directives.
- * @argmts: The arguments to the builtin directives.
+ * @args: The arguments to the builtin directives.
  * @nume_argmts: The number of arguments.
- * @insert: Input directive.
+ * @input: Input directive.
  * @env: The environment variables.
  *
  * Return: 1 on (success) and (0) if not successful
 */
 
-int handling_builtin_directives(char **argmts, int nume_argmts,
-		char *insert, char **env)
+int handling_builtin_directives(char **args, int nume_argmts,
+		char *input, char **env)
 {
-	if (strcmp(argmts[0], "exit") == 0)
+	if (strcmp(args[0], "exit") == 0)
 	{
-		return (framework_exit(argmts, insert));
+		return (framework_exit(args, input));
 	}
-	else if (strcmp(argmts[0], "cd") == 0)
+	else if (strcmp(args[0], "cd") == 0)
 	{
-		designate_cd(argmts, nume_argmts);
+		designate_cd(args, nume_argmts);
 		return (1);
 	}
-	else if (strcmp(argmts[0], "env") == 0)
+	else if (strcmp(args[0], "env") == 0)
 	{
 		print_the_env(env);
 		return (1);

@@ -3,7 +3,7 @@
 /**
  * print_the_env - a function that prints
  * the environment variables.
- * @myenv: the arguments
+ * @env: the arguments
 */
 
 void print_the_env(char **env)

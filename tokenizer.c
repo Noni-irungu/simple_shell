@@ -3,27 +3,27 @@
 /**
  * input_tokenizer - Afunctin that tokenizes
  * the input of strings.
- * @insert: The argument input.
- * @argmts: An array of strings.
+ * @input: The argument input.
+ * @args: An array of strings.
  *
  * Return: The number of items tokenized
 */
 
-int input_tokenizer(char *insert, char *argmts[])
+int input_tokenizer(char *input, char *args[])
 {
 	int enumerate;
 	char *di_token;
 
 	enumerate = 0;
-	di_token = strtok(insert, " \n");
+	di_token = strtok(input, " \n");
 
 	while (di_token)
 	{
-		argmts[enumerate] = di_token;
+		args[enumerate] = di_token;
 		di_token = strtok(NULL, " \n");
 		enumerate++;
 	}
 
-	argmts[enumerate] = NULL;
+	args[enumerate] = NULL;
 	return (enumerate);
 }
