@@ -4,12 +4,12 @@
  * framework_exit - a function that
  * handles the exit status.
  * @argmts: The arguments to the function.
- * @insert: It chaecks the status of exit.
+ * @insert: It checks the status of exit.
  *
- * Return: Staus of exit, otherwise (-1)
+ * Return: Status of exit, otherwise (1)
 */
 
-int framework_exit(char **argmts, char *insert)
+int framework_exit(char **argmts:, char *insert)
 {
 	char *string_status;
 	int exit_status, r;
