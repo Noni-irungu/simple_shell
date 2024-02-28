@@ -19,7 +19,7 @@ char *obtainfile_pathway(char *file_identifier)
 	}
 	if (!pathway)
 	{
-		perror("Path was not found");
+		perror("Path not found");
 		return (NULL);
 	}
 
@@ -28,7 +28,7 @@ char *obtainfile_pathway(char *file_identifier)
 	if (direct_pathway == NULL)
 	{
 		write(2, file_identifier, strlen(file_identifier));
-		write(2, ": command was not found\n", 24);
+		write(2, ": command not found\n", 19);
 		return (NULL);
 	}
 

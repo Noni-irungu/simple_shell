@@ -30,7 +30,7 @@ char *obtainfile_executable(char *pathway, char *file_identifier)
 
 		if (!path_buf)
 		{
-			perror("Error: malloc failure");
+			perror("Error: malloc failed");
 			exit(EXIT_FAILURE);
 		}
 		strcpy(path_buf, di_token);
