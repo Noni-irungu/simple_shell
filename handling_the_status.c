@@ -12,8 +12,7 @@
 int framework_exit(char **argmts, char *insert)
 {
 	char *string_status;
-	int exit_status;
-	int r;
+	int exit_status, r;
 
 	if (argmts[1] != NULL)
 	{

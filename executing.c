@@ -11,7 +11,7 @@
 void executing_the_directive(char *insert, char *argmtsv[], char **env)
 {
 	char *argmts[10];
-	char *pathway, *shell_identifier;
+	char *path, *shell_identifier;
 	int status, nume_argmts;
 	pid_t child_pid;
 
@@ -36,7 +36,7 @@ void executing_the_directive(char *insert, char *argmtsv[], char **env)
 	}
 	if (child_pid == 0)
 	{
-		if (execve(pathway, argmts, NULL) == -1)
+		if (execve(path, argmts, NULL) == -1)
 		{
 			write(2, shell_identifier, strlen(shell_identifier));
 			write(2, ": 1: ", 5);
@@ -49,5 +49,5 @@ void executing_the_directive(char *insert, char *argmtsv[], char **env)
 	{
 		wait(&status);
 	}
-	free(pathway);
+	free(path);
 }
