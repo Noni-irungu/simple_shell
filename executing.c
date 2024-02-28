@@ -24,7 +24,7 @@ void executing_the_directive(char *insert, char *argmtsv[], char **env)
 	{
 		return;
 	}
-	pathway = obtainfile_pathway(argmts[0]);
+	path = obtainfile_pathway(argmts[0]);
 
 	child_pid = fork();
 
