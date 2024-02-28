@@ -6,13 +6,13 @@
  * @argmts: The arguments to the builtin directives.
  * @nume_argmts: The number of arguments.
  * @insert: Input directive.
- * @myenv: The environment variables.
+ * @env: The environment variables.
  *
  * Return: 1 on (success) and (0) if not successful
 */
 
 int handling_builtin_directives(char **argmts, int nume_argmts,
-		char *insert, char **myenv)
+		char *insert, char **env)
 {
 	if (strcmp(argmts[0], "exit") == 0)
 	{
@@ -23,9 +23,9 @@ int handling_builtin_directives(char **argmts, int nume_argmts,
 		designate_cd(argmts, nume_argmts);
 		return (1);
 	}
-	else if (strcmp(argmts[0], "myenv") == 0)
+	else if (strcmp(argmts[0], "env") == 0)
 	{
-		print_the_env(myenv);
+		print_the_env(env);
 		return (1);
 	}
 

@@ -1,17 +1,17 @@
 #include "shell.h"
 
 /**
- * print_the_environment - a function that prints
+ * print_the_env - a function that prints
  * the environment variables.
  * @myenv: the arguments
 */
 
-void print_the_env(char **myenv)
+void print_the_env(char **env)
 {
-	while (*myenv != NULL)
+	while (*env != NULL)
 	{
-		write(1, *myenv, strlen(*myenv));
+		write(1, *env, strlen(*env));
 		write(1, "\n", 1);
-		myenv++;
+		env++;
 	}
 }

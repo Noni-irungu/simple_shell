@@ -5,10 +5,10 @@
  * input from buffer.
  * @insert: The argument from buffer.
  * @argmtsv: An array of argument.
- * @myenv: The environment variables.
+ * @env: The environment variables.
 */
 
-void executing_the_directive(char *insert, char *argmtsv[], char **myenv)
+void executing_the_directive(char *insert, char *argmtsv[], char **env)
 {
 	char *argmts[10];
 	char *pathway, *shell_identifier;
@@ -20,7 +20,7 @@ void executing_the_directive(char *insert, char *argmtsv[], char **myenv)
 
 	if (nume_argmts == 0)
 		return;
-	if (handling_builtin_directives(argmts, nume_argmts, insert, myenv) == 1)
+	if (handling_builtin_directives(argmts, nume_argmts, insert, env) == 1)
 	{
 		return;
 	}

@@ -25,7 +25,7 @@ int framework_exit(char **argmts, char *insert)
 			if (string_status[r] < '0' || string_status[r] > '9')
 			{
 				handling_the_exit(insert, 2);
-				return (-1);
+				return (1);
 			}
 			exit_status = exit_status * 10 + (string_status[r] - '0');
 		}

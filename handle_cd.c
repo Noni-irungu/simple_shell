@@ -18,7 +18,7 @@ void designate_cd(char **argmts, int nume_argmts)
 	{
 		if (!central_directory)
 		{
-			perror("Home environment is not set");
+			perror("Home environment not set");
 			return;
 		}
 		if (chdir(central_directory) != 0)
@@ -30,7 +30,7 @@ void designate_cd(char **argmts, int nume_argmts)
 	{
 		if (!preceding_directory)
 		{
-			perror("OLDPWD environment is not set");
+			perror("OLDPWD environment not set");
 			return;
 		}
 		if (chdir(preceding_directory) != 0)
