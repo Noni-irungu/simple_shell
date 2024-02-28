@@ -3,20 +3,20 @@
 /**
  * obtainfile_executable - a function that obtains
  * the executable path of a file.
- * @pathway: The full path variable.
+ * @path: The full path variable.
  * @file_identifier: The executable file.
  *
  * Return: The full path to the executable file.
 */
 
-char *obtainfile_executable(char *pathway, char *file_identifier)
+char *obtainfile_executable(char *path, char *file_identifier)
 {
 	char *pathway_copy;
 	char *di_token;
 	struct stat file_pathway;
 	char *path_buf = NULL;
 
-	pathway_copy = strdup(pathway);
+	pathway_copy = strdup(path);
 	di_token = strtok(pathway_copy, ":");
 
 	while (di_token)

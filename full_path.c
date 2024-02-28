@@ -10,20 +10,20 @@
 
 char *obtainfile_pathway(char *file_identifier)
 {
-	char *pathway = getenv("PATH");
+	char *path = getenv("PATH");
 	char *direct_pathway;
 
 	if (beginforwardslash(file_identifier) && access(file_identifier, X_OK) == 0)
 	{
 		return (strdup(file_identifier));
 	}
-	if (!pathway)
+	if (!path)
 	{
 		perror("Path not found");
 		return (NULL);
 	}
 
-	direct_pathway = obtainfile_executable(pathway, file_identifier);
+	direct_pathway = obtainfile_executable(path, file_identifier);
 
 	if (direct_pathway == NULL)
 	{
