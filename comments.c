@@ -12,7 +12,7 @@ char *handles_statements(char *insert)
 {
 	char *statement_posit;
 
-	statement_posit = strstr(insert, "#");
+	statement_posit = strstr(insert, " #");
 
 	if (statement_posit)
 	{
