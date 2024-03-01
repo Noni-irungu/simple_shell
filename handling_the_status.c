@@ -32,7 +32,7 @@ int framework_exit(char **args, char *input)
 	}
 	else
 	{
-		handling_the_exit(input, 127);
+		handling_the_exit(input, 0);
 	}
 	return (1);
 }
