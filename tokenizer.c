@@ -11,19 +11,19 @@
 
 int input_tokenizer(char *input, char *args[])
 {
-	int enumerate;
+	int cnt;
 	char *di_token;
 
-	enumerate = 0;
+	cnt = 0;
 	di_token = strtok(input, " \n");
 
 	while (di_token)
 	{
-		args[enumerate] = di_token;
+		args[cnt] = di_token;
 		di_token = strtok(NULL, " \n");
-		enumerate++;
+		cnt++;
 	}
 
-	args[enumerate] = NULL;
-	return (enumerate);
+	args[cnt] = NULL;
+	return (cnt);
 }

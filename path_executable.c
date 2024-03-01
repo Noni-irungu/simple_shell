@@ -11,13 +11,13 @@
 
 char *obtainfile_executable(char *path, char *file_identifier)
 {
-	char *pathway_copy;
+	char *path_copy;
 	char *di_token;
-	struct stat file_pathway;
+	struct stat file_path;
 	char *path_buf = NULL;
 
-	pathway_copy = strdup(path);
-	di_token = strtok(pathway_copy, ":");
+	path_copy = strdup(path);
+	di_token = strtok(path_copy, ":");
 
 	while (di_token)
 	{
@@ -38,14 +38,14 @@ char *obtainfile_executable(char *path, char *file_identifier)
 		strcat(path_buf, file_identifier);
 		strcat(path_buf, "\0");
 
-		if (stat(path_buf, &file_pathway) == 0 && access(path_buf, X_OK) == 0)
+		if (stat(path_buf, &file_path) == 0 && access(path_buf, X_OK) == 0)
 		{
-			free(pathway_copy);
+			free(path_copy);
 			return (path_buf);
 		}
 		di_token = strtok(NULL, ":");
 	}
-	free(pathway_copy);
+	free(path_copy);
 	if (path_buf)
 	{
 		free(path_buf);

@@ -9,31 +9,30 @@
 
 void designate_cd(char **args, int nume_argmts)
 {
-	const char *central_directory;
-	const char *preceding_directory;
+	const char *cent_dir, *prec_dir;
 
-	central_directory = getenv("HOME");
-	preceding_directory = getenv("OLDPWD");
+	cent_dir = getenv("HOME");
+	prec_dir = getenv("OLDPWD");
 	if (nume_argmts == 1 || strcmp(args[1], "~") == 0)
 	{
-		if (!central_directory)
+		if (!cent_dir)
 		{
 			perror("Home environment not set");
 			return;
 		}
-		if (chdir(central_directory) != 0)
+		if (chdir(cent_dir) != 0)
 		{
 			perror("cd");
 		}
 	}
 	else if (nume_argmts == 2 && strcmp(args[1], "-") == 0)
 	{
-		if (!preceding_directory)
+		if (!prec_dir)
 		{
 			perror("OLDPWD environment not set");
 			return;
 		}
-		if (chdir(preceding_directory) != 0)
+		if (chdir(prec_dir) != 0)
 		{
 			perror("cd");
 		}

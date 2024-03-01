@@ -11,7 +11,7 @@
 char *obtainfile_pathway(char *file_identifier)
 {
 	char *path = getenv("PATH");
-	char *direct_pathway;
+	char *full_path;
 
 	if (beginforwardslash(file_identifier) && access(file_identifier, X_OK) == 0)
 	{
@@ -23,14 +23,14 @@ char *obtainfile_pathway(char *file_identifier)
 		return (NULL);
 	}
 
-	direct_pathway = obtainfile_executable(path, file_identifier);
+	full_path = obtainfile_executable(path, file_identifier);
 
-	if (direct_pathway == NULL)
+	if (full_path == NULL)
 	{
 		write(2, file_identifier, strlen(file_identifier));
 		write(2, ": command not found\n", 19);
 		return (NULL);
 	}
 
-	return (direct_pathway);
+	return (full_path);
 }

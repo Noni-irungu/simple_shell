@@ -21,16 +21,14 @@ void executing_the_directive(char *input, char *argv[], char **env)
 	if (nume_argmts == 0)
 		return;
 	if (handling_builtin_directives(args, nume_argmts, input, env) == 1)
-	{
 		return;
-	}
 	path = obtainfile_pathway(args[0]);
 
 	child_pid = fork();
 
 	if (child_pid == -1)
 	{
-		perror("Error: Failure to create");
+		perror("Error: Failed to create");
 		free(input);
 		exit(1);
 	}
@@ -41,7 +39,7 @@ void executing_the_directive(char *input, char *argv[], char **env)
 			write(2, shell_identifier, strlen(shell_identifier));
 			write(2, ": 1: ", 5);
 			write(2, args[0], strlen(args[0]));
-			write(2, ": was not found\n", 16);
+			write(2, ": not found\n", 12);
 			exit(127);
 		}
 	}
